@@ -34,7 +34,9 @@ stages:
     - script: dotnet publish -f $(dotNetFramework) -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)
       displayName: Publish Project 
 
-
+    - task: NodeTool@0
+      inputs:
+       versionSpec: '14.x'
     
     - task: PublishBuildArtifacts@1
       inputs:
